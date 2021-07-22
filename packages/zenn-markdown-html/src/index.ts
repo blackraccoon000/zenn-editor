@@ -21,6 +21,7 @@ const mdFootnote = require('markdown-it-footnote');
 const mdTaskLists = require('markdown-it-task-lists');
 const mdInlineComments = require('markdown-it-inline-comments');
 const mdLinkAttributes = require('markdown-it-link-attributes');
+const mdRuby = require('markdown-it-ruby');
 
 const md = markdownIt({
   breaks: true,
@@ -54,7 +55,8 @@ md.use(mdBr)
   })
   .use(mdKatex)
   .use(mdLinkifyToCard)
-  .use(mdMermaid);
+  .use(mdMermaid)
+  .use(mdRuby);
 
 // custom footnote => TODO: ファイルを分ける
 md.renderer.rules.footnote_block_open = () =>
